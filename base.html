@@ -20,11 +20,11 @@
 
                     <div id="navbarMenuHeroA" class="navbar-menu">
                         <div class="navbar-end">
-                            <a href="{{ url_for('index') }}" class="navbar-item">
+                            <a href="index.html" class="navbar-item">
                                 Home
                             </a>
                             {% if session.user_id %}
-                            <a href="{{ url_for('dashboard') }}" class="navbar-item">
+                            <a href="dashboard.html" class="navbar-item">
                                 Dashboard
                             </a>
                             <a href="{{ url_for('logout') }}" class="navbar-item">
@@ -32,10 +32,10 @@
                             </a>
                             {% endif %}
                             {% if not session.user_id %}
-                            <a href="{{ url_for('login') }}" class="navbar-item">
+                            <a href="login.html" class="navbar-item">
                                 Login
                             </a>
-                            <a href="{{ url_for('register') }}" class="navbar-item">
+                            <a href="register.html" class="navbar-item">
                                 Register
                             </a>
                             {% endif %}
