@@ -1,7 +1,5 @@
 <!-- templates/base.html -->
 
-
-{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -22,11 +20,11 @@
 
                     <div id="navbarMenuHeroA" class="navbar-menu">
                         <div class="navbar-end">
-                            <a href="index.html" class="navbar-item">
+                            <a href="{{ url_for('index') }}" class="navbar-item">
                                 Home
                             </a>
                             {% if session.user_id %}
-                            <a href="dashboard.html" class="navbar-item">
+                            <a href="{{ url_for('dashboard') }}" class="navbar-item">
                                 Dashboard
                             </a>
                             <a href="{{ url_for('logout') }}" class="navbar-item">
@@ -34,10 +32,10 @@
                             </a>
                             {% endif %}
                             {% if not session.user_id %}
-                            <a href="login.html" class="navbar-item">
+                            <a href="{{ url_for('login') }}" class="navbar-item">
                                 Login
                             </a>
-                            <a href="register.html" class="navbar-item">
+                            <a href="{{ url_for('register') }}" class="navbar-item">
                                 Register
                             </a>
                             {% endif %}
