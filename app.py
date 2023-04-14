@@ -71,7 +71,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         return redirect(url_for('login'))
-    return render_template('register.html')
+    return render_template('register.html', title='Register')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -85,7 +85,7 @@ def login():
         else:
             flash('Login unsuccessful. Please check username and password')
             return redirect(url_for('login'))
-    return render_template('login.html')
+    return render_template('login.html' , title='Login')
 
 @app.route('/dashboard')
 @login_required
@@ -110,7 +110,7 @@ def create_account():
         db.session.add(account)
         db.session.commit()
         return redirect(url_for('dashboard'))
-    return render_template('create_account.html')
+    return render_template('create_account.html', title='Create Account')
 
 @app.route('/account/<int:id>')
 @login_required
